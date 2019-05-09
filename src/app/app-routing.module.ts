@@ -1,12 +1,11 @@
 import { NgModule } from "@angular/core";
 import { RouterModule, Routes, PreloadAllModules } from '@angular/router';
-import { LoginComponent } from "./pages/login/login";
 import { ThemeComponent } from "./components/theme/theme.component";
 import { AuthGuard } from "./guards/auth.guard";
 
 const routes: Routes = [
-	{ path: '/login', component: LoginComponent },
-	{ path: '', redirectTo: 'home' },
+	{ path: 'login', loadChildren: './pages/login/login.module#LoginModule' },
+	{ path: '', redirectTo: 'home', pathMatch: 'full' },
 	{
 		path: '',
 		component: ThemeComponent, 
@@ -15,7 +14,7 @@ const routes: Routes = [
 			{ path: 'home', loadChildren: './pages/home/home.module#HomeModule' }
 		]
 	},
-	{ path: '**' }
+	{ path: '**', loadChildren: './pages/not-found/not-found.module#NotFoundModule' }
 ]
 
 @NgModule({

@@ -6,19 +6,20 @@ import { AppRoutingModule } from './app-routing.module';
 import { ThemeComponent } from './components/theme/theme.component';
 import { NotFoundComponent } from './pages/not-found/not-found';
 import { AuthGuard } from './guards/auth.guard';
+import { AuthService } from './services/auth.service';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ThemeComponent,
-    NotFoundComponent
+    ThemeComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule
   ],
   providers: [
-    AuthGuard
+    AuthGuard,
+    AuthService
   ],
   bootstrap: [AppComponent]
 })
