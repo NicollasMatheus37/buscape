@@ -8,7 +8,7 @@ const routes: Routes = [
 	{ path: '', redirectTo: '/', pathMatch: 'full' },
 	{ path: '', component: HomeComponent },
 	{ path: '**', component: NotFoundComponent }
-]	
+]
 
 @NgModule({
 	imports: [RouterModule.forRoot(routes)],
